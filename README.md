@@ -42,11 +42,11 @@ We apply the trained model to the test set of data, to monitor how the model per
 <li>In the case of the good loans, the ratio is approximately 100%, which is not surprising given that the data has a significant class imbalance where the total of good loans outnumbers bad loans.</li>
 <li>In the case of the high-risk loans this ratio equals 89%, meaning that the model has incorrectly classified bad loans as good 11% of the time. This represents a good outcome, potentially screening out 89% of future loans with a high-risk of default. The orginal data set of 77,500 applications had 2,500 identified defaults. If this model were applied than it would have reduced that number to approximately 275. It could therefore represent a significant improvement to the loan company'sscreening and a significant saving.</li></ul>
 
-<li>Presicion:</li></ol><ul>
+<li>Presicion:</li><ul>
 
 <li>Precision is the number of true positive predictions divided by the total number of positive predictions made by the model, measuring the model's ability to identify positive instances correctly. This measure is useful in looking at the ability of the model to minimise false positives, that is classifying good loans as bad, so potentially excluding good investments for the loan company</li>
 <li>In predicting good loans the model's precision is again almost 100%; however, as observed, this is subject to the significant class imbalance that exists within the dataset.</li> 
-<li>The proportion of bad loans detected out of the entire instance of bad loans is 87%. This is a positive indication that the model is accurate.</li></ul>
+<li>The proportion of bad loans detected out of the entire instance of bad loans is 87%. This is a positive indication that the model is accurate.</li></ul></ol>
 
 <h2>Issues</h2><ol>
 
@@ -56,17 +56,17 @@ We apply the trained model to the test set of data, to monitor how the model per
 <li>There are several risks associated with an imbalanced dataset, in particular the model might focus on predicting the majority class (the healthy loans) resulting in a higher number of false negatives and a lower recall for the bad loans. There is also a risk of overfitting the majority class, having learned the patterns within the data for the healthy loans, leading to the model being less able to predict instances of the bad loans.</li>
 <li>the model should undergo further training on sample sets with a greater number of defaulting loans for further evaluation. Although we can expect a much smaller number of defaulting loans in any sample, given that applications are already screened, consideration should be given to using techniques that can help address the risks of an imbalanced dataset - we could resample the dataset, producing an oversample of the bad debts compared to the majority set, or employ class weighting, to force the model to attach greater importance to occurrences of the minority class. </li></ul>
 
-<li>Overfitting</li></ol><ul>
+<li>Overfitting</li><ul>
 <li>Overfitting occurs when a model becomes too specialized in the training data and fails to generalize well to new, unseen data.</li>
 <li>To examine whether there are any clear indications of overfitting I have also produced a classification report for the training data. This is comparable with the test data results, with no indication that the model has performed better at predicting the training set of results compared to the test data (recall for the deault loans is 89% and precision is 85%).</li>
-<li>Despite the fact that the metrics do not suggest that the model is overfitted, because the majority class has a higher number of instances, the model may be biased towards predicting the majority class correctly. It may not pay sufficient attention to the minority class, resulting in lower recall (sensitivity) for the minority class, leading to a higher number of false negatives.</li></ul>
+<li>Despite the fact that the metrics do not suggest that the model is overfitted, because the majority class has a higher number of instances, the model may be biased towards predicting the majority class correctly. It may not pay sufficient attention to the minority class, resulting in lower recall (sensitivity) for the minority class, leading to a higher number of false negatives.</li></ul></ol>
 
 <h2>Summary</h2><ul>
 
 <li>The model has performed well in predicting high-risk loans in the test data, with a high degree of recall and precision. The model therefore shows promise of producing a much more effective screening process than currently employed by the lending servicescompany.</li>
 <li>The greatest concern in evaluating the model is the class imbalance between non-default instances (class 0) compared to default instances (class 1). the defualt instances form aproximately 3% of the total dataset. There is a risk that this willhave skewed the results of the model, which is potentially overfitted to the majority class meaining that it is biased towards predicting the majority class correctly leading to a higher number of false negatives in for the minority class</li>
 <li>If the class imbalance is causing overfitting and impacting the ability of the model to predict instances of the minoirty class accurately, then this will impact the appropriateness of the model given that its purpose is to identify potentially high-risk loans.
-<li>In order to mitigate this risk a number of steps would be recommmended:</li><ol>
+<li>In order to mitigate this risk a number of steps are recommmended:</li><ol>
 <li>Resampling - employ resampling techniques such as oversampling the minority class (e.g., SMOTE) or undersampling the majority class. These techniques can help balance the dataset and mitigate the bias towards the majority class.</li>
 <li>Consider alternative classification algorithms or techniques designed to handle imbalanced data, such as ensemble methods like Random Forest</li>
 <li>Utilise cross-validation in conjunction with resampling to test the accuracy of the model. This involves splitting the dataset up into a number of equally sized samples (or folds). Each sample containing a balanced representation of the target variable's classes. We can then train the mdoel on one fold and test it against the remainder. This is repeated with each fold being used as a training set and then validated against the rest of the folds which serve as a training set. This will allow us to aggregate the model's performance metrics to assess its ability to generalise.</li>
