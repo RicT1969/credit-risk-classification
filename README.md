@@ -47,13 +47,21 @@ marks scored against the application during vetting;</li></ul>
 
 <li>Precision is the number of true positive predictions divided by the total number of positive predictions made by the model, measuring the model's ability to identify positive instances correctly. This measure is useful in looking at the ability of the model to minimise false positives, i.e. misclassifying good loans, so potentially excluding good investments.</li>
 <li>In predicting good loans the model's precision is again almost 100%; however, as observed, this is subject to the significant class imbalance in the dataset.</li> 
-<li>The proportion of bad loans detected out of the entire instance of bad loans is 87%. This is a positive indication that the model is accurate.</li></ul></ol>
+<li>The proportion of bad loans detected out of the entire instance of bad loans is 87%. This is a positive indication that the model is accurate.</li></ul>
+
+<li>Accuracy:</li><ul>
+
+<li>Accuracy is the proportion of correct predictions (true positives and true negatives) over total predictions.</li>
+<il>In relation to the its ability to predict whether a loan is good or bad, the score is 99%, meaning that in 99% of cases the model has predicted the correct outcome</li>
+<li>Whilst this appears to be an extremely good score, we are dealing with a highly imbalanced dataset. The accuracy measure is very sensitive to imbalance, and in this case, where the minority class (the high risk loans) is such a small proportion of the total, the accuracy measure will be heavily skewed by the majority class.</li>
+<li>Given the use case for this model, the accuracy measure is not a useful gauge for assessing the model's results and we should place greater relaince on precision and recall (which will be less effected by calss imbalance).</ol></ul>
+
 
 <h2>Issues</h2><ol>
 
 <li>Imbalance</li><ul>
 <li>The dataset is highly imnbalanced with a significantly larger number of non-default instances (class 0) compared to default instances (class 1). This class imbalance can have implications for model evaluation and potential concerns regarding overfitting. The 'defaults' class of loans forms only 3% of the total records (which is similarly represented in both training and test data).</li>
-<li>The imbalance may mean that the performance metrics are misleading or skewed. For this reason the measure of "accuracy" is not useful. This is the ratio of correct predictions in relation to the total dataset. Given that one class significantly outweighs the other, the accuracy measure will be heavily skewed by the majority class.</li>
+<li>The imbalance may mean that the performance metrics are misleading or skewed. For this reason the measure of "accuracy" is not useful.</li>
 <li>There are several risks associated with an imbalanced dataset:<ul>
 <li> the model might focus on predicting the majority class (the healthy loans) resulting in a higher number of false negatives and a lower recall for the defaults;</li>
 <li>the risk of overfitting the majority class leading to the model being less able to predict instances of the bad loans.</li></ul>
