@@ -21,7 +21,7 @@ marks scored against the application during vetting;</li></ul>
 <p>These are the independent variables used to train the model.</p>
 <p>Additionally, the loan status (presumably indicating repayment or default) is the dependent or target variable against which the model is trained and which, should the model be deployed, is the element we are trying to predict.</p>
 
-<h2>>What is a Linear Regression Model?</h2>
+What is a Linear Regression Model?
 
 <p>The problem we are trying to solve - whether we can predict if a future loan will be good or bad is a classification problem - the result can only be yes, this loan is high-risk fo default, or no, it is not. Linear regression is designed to deal with classification problems, particularly binary problems such as this with only two results. Logistic regression examines the relationship between the input features (the independent variables outlined above) and the probability of them belonging to a particular class (the dependent varaible). This is achieved by applying a sigmoid function (which produces an 's' shaped curve) to the data set to provide a line seperating the two classes of data (the 'decision boundary') based on the probability of the loan being high-risk or healthy. The result can then be applied to future applications to assess whether they represent a high-risk of default.</p>
 
