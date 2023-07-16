@@ -64,8 +64,8 @@ marks scored against the application during vetting;</li></ul>
 <li>The imbalance may mean that the performance metrics are misleading or skewed. For this reason the measure of "accuracy" is not useful.</li>
 <li>There are several risks associated with an imbalanced dataset:<ul>
 <li>The model might focus on predicting the majority class (the healthy loans) resulting in a higher number of false negatives and a lower recall for the defaults;</li>
-<li>the risk of overfitting the majority class leading to the model being less able to predict instances of the bad loans.</li></ul>
-<li>the model should undergo further training on sample sets with a greater number of defaulting loans for further evaluation. Although we can expect a much smaller number of defaulting loans in any sample, given that applications are already screened, consideration should be given to using techniques that can help address the risks of an imbalanced dataset.</li></ul>
+<li>The risk of overfitting the majority class leading to the model being less able to predict instances of the bad loans.</li></ul>
+<li>The model should undergo further training on sample sets with a greater number of defaulting loans for further evaluation. Although we can expect a much smaller number of defaulting loans in any sample, given that applications are already screened, consideration should be given to using techniques that can help address the risks of an imbalanced dataset.</li></ul>
 
 <li>Overfitting</li><ul>
 <li>Overfitting occurs when a model becomes too specialized in the training data and fails to generalize well to new, unseen data.</li>
