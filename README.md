@@ -31,7 +31,7 @@ marks scored against the application during vetting;</li></ul>
 
 <h2>How do we test the accuracy of the model?</h2>
 
-<p>We apply the trained model to the test set of data and compare the predicted results against the actual instances of good loana and defaults.</p>
+<p>We apply the trained model to the test set of data and compare the predicted results against the actual instances of good loans and defaults.</p>
 
 <h2>Results and accuracy</h2>
 
